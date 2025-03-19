@@ -1103,16 +1103,23 @@ Fun Facts Style
   font-size: 40px;
 }
 
-.fun-facts .counter:after {
+.fun-facts .counter::after {
   position: absolute;
   width: 50px;
   height: 50px;
   background-color: red;
   border-radius: 50%;
-  content: '';
+  content: attr(data-number); /* Affiche le contenu dynamique */
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   right: -25px;
   top: -25px;
 }
+
 
 
 /* 
