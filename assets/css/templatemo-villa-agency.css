@@ -327,61 +327,6 @@ Header Style
 --------------------------------------------- 
 */
 
-.sub-header {
-  background-color: #fff;
-  padding: 10px 0px;
-  border-bottom: 1px solid #eee;
-}
-
-.sub-header ul li {
-  display: inline-block;
-}
-
-.sub-header ul.social-links {
-  text-align: right;
-}
-
-.sub-header ul.social-links li {
-  margin-left: 8px;
-}
-
-.sub-header ul.social-links li a {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-color: #cdcdcd;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 30px;
-  color: #fff;
-  font-size: 14px;
-  transition: all .3s;
-}
-
-.sub-header ul.social-links li a:hover {
-  background-color: #f35525;
-}
-
-.sub-header ul.info li {
-  font-size: 14px;
-  color: #7a7a7a;
-  border-right: 1px solid #eee;
-  margin-right: 25px;
-  padding-right: 25px;
-}
-
-.sub-header ul.info li:last-child {
-  margin-right: 0px;
-  padding-right: 0px;
-  border-right: none;
-}
-
-.sub-header ul.info li i {
-  font-size: 20px;
-  color: #f35525;
-  margin-right: 8px;
-}
-
 .background-header {
   background-color: #fff;
   height: 80px!important;
@@ -429,8 +374,17 @@ Header Style
   letter-spacing: 2px;
 }
 
-.header-area .main-nav .logo img {
-  width: 130px;
+.header-area.header-sticky .main-nav .logo img {
+  max-width: 90px;
+}
+
+.header-area.header-sticky .main-nav .logo {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.background-header .main-nav .logo img {
+  line-height: 80px;
 }
 
 .background-header .main-nav .logo h1 {
@@ -456,7 +410,6 @@ Header Style
 .header-area .main-nav .nav li {
   padding-left: 10px;
   padding-right: 10px;
-  height: 100px;
   line-height: 100px;
 }
 
@@ -757,6 +710,31 @@ Banner Style
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Assure que la bannière prend toute la hauteur de la fenêtre */
+}
+
+video {
+  width: 100%;
+  height: 100%; /* La vidéo prend toute la hauteur disponible */
+  object-fit: cover; /* La vidéo couvre toute la zone sans déformer l'image */
+}
+
+.main-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Assure que la bannière prend toute la hauteur de la fenêtre */
+}
+
+video {
+  width: 100%;
+  height: 100%; /* La vidéo prend toute la hauteur disponible */
+  object-fit: cover; /* La vidéo couvre toute la zone sans déformer l'image */
 }
 
 .overlay {
@@ -764,7 +742,7 @@ Banner Style
   top: 0;
   left: 0;
   width: 100%;
-  height: 955px;
+  height: 100%; /* L'overlay prend toute la hauteur de la vidéo */
   background: rgba(0, 0, 0, 0.5); /* Ajuste l'opacité selon ton besoin */
   pointer-events: none;
 }
@@ -778,8 +756,11 @@ Banner Style
   overflow: hidden;
   border-right: 3px solid white; /* Curseur d'écriture */
   width: 0;
-  animation: typing 7s steps(30, end) forwards, blink 0.7s infinite;
+  animation: typing 7s steps(30, end) forwards, blink 0.7s infinite 7s; /* L'animation de blink démarre après la fin de l'écriture */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Animation de l'écriture */
@@ -788,16 +769,56 @@ Banner Style
     width: 0;
   }
   to {
-    width: 40%;
+    width: 100%;
   }
 }
 
 /* Animation du curseur qui clignote */
 @keyframes blink {
+  0%, 100% {
+    border-color: white;
+  }
   50% {
     border-color: transparent;
   }
 }
+
+/* Styles responsive */
+@media (max-width: 768px) {
+  .typing-text {
+    font-size: 1.5rem;
+    width: 80%;
+    animation: typing 7s steps(30, end) forwards, blink 0.7s infinite; /* Animation de blink sur les petits écrans */
+  }
+
+  .main-banner {
+    height: 60vh;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-text {
+    font-size: 1.2rem;
+    width: 70%;
+    animation: typing 7s steps(30, end) forwards, blink 0.7s infinite; /* Animation de blink sur les petits écrans */
+  }
+
+  .main-banner {
+    height: 50vh;
+  }
+}
+
+/* Arrêter l'animation de clignotement sur les grands écrans (plus de 768px) */
+@media (min-width: 769px) {
+  .typing-text {
+    animation: typing 7s steps(30, end) forwards; /* Pas de blink */
+  }
+}
+
 
 .main-banner .item {
   background-position: center center;
