@@ -1221,6 +1221,18 @@ Properties Style
 --------------------------------------------- 
 */
 
+.see-more {
+  color: red;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.see-more:hover {
+  transition: all .3s;
+  background-color: #ffd7d7;
+}
+
+
 .properties .item {
   background-color: #fafafa;
   border-radius: 10px;
@@ -1233,7 +1245,7 @@ Properties Style
 }
 
 .properties .item span.category {
-  background-color: #fbd9cf;
+  background-color: #fbb8b8;
   font-weight: 500;
   border-radius: 5px;
   font-size: 14px;
@@ -1506,7 +1518,7 @@ Properties Style
 }
 
 .properties ul.properties-filter li a.is_active {
-  background-color: #f35525;
+  background-color: #ff0000;
   color: #fff;
 }
 
@@ -1515,7 +1527,7 @@ Properties Style
 }
 
 .properties ul.properties-filter li a:hover {
-  color: #f35525;
+  color: #ff0000;
 }
 
 .properties ul.pagination {
