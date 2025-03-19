@@ -1573,6 +1573,11 @@ Single Page Style
   float: none;
 }
 
+.main-image h2 {
+  color: white;
+  padding: 10px;
+}
+
 .single-property .main-content h4 {
   font-size: 30px;
   margin-top: 25px;
