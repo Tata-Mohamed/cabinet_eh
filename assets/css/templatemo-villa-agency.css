@@ -1311,8 +1311,14 @@ Contact Style
   position: relative;
 }
 
-.contact .section-heading h2 {
+.section-heading h2 {
   color: #fff;
+}
+
+.text-contact-us {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 60px;
 }
 
 .contact-content {
@@ -1409,7 +1415,7 @@ Contact Style
 }
 
 .contact-content #contact-form button:hover {
-  background-color: #f35525;
+  background-color: #ff0000;
 }
 
 
