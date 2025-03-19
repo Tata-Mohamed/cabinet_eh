@@ -1555,10 +1555,20 @@ Single Page Style
 }
 
 .single-property .main-content h4 {
-  font-size: 25px;
+  font-size: 30px;
   margin-top: 25px;
   margin-bottom: 40px;
   padding-bottom: 40px;
+  color: white;
+  border-bottom: 1px solid #eee;
+}
+
+.single-property .main-content p {
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  color: white;
   border-bottom: 1px solid #eee;
 }
 
